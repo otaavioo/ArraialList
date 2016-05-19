@@ -41,10 +41,10 @@ class Menu
         echo '<div class="item">
                     <div class="ui relaxed divided list">
                         <div class="item">
-                            <i class="large food middle aligned icon"></i>
+                            <i class="large spoon middle aligned icon"></i>
                             <div class="content">
-                                <a class="header">AgênciaSys</a>
-                                <div class="description">Lista do Café</div>
+                                <a href="/" class="header">AgênciaSys</a>
+                                <div class="description">Lista do Arraiá</div>
                             </div>
                         </div>
                     </div>

@@ -19,7 +19,7 @@ $access = $_GET['access'];
                     <div class="header">
                         Sugestões
                     </div>
-                    <p>Esta é a área para que sejam enviadas sugestões para implementação e correção neste projeto de Lista de Café</p>
+                    <p>Esta é a área para que sejam enviadas sugestões para implementação e correção neste projeto da Lista do Arraiá</p>
                 </div>
             </div>
 

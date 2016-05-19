@@ -16,7 +16,7 @@ include_once 'class/menu.class.php';
                     <div class="header">
                         Lista
                     </div>
-                    <p>Listas de café</p>
+                    <p>Lista de Arraiás</p>
                 </div>
             </div>
             <form class="ui form attached fluid segment" method="POST" action="action/action.list.php">

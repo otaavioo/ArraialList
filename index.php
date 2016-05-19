@@ -35,9 +35,9 @@
                 <i class="file text outline icon"></i>
                 <div class="content">
                     <div class="header">
-                        Já marcou na lista o que vai trazer para o café do dia <?= $date ?>?
+                        Já marcou na lista o que vai levar para o Arraiá do dia <?= $date ?>?
                     </div>
-                    <p>Marque abaixo seu nome e o que vai trazer para o café. <i class="thumbs outline up icon"></i></p>
+                    <p>Marque abaixo seu nome e o que vai levar para o Arraiá. <i class="thumbs outline up icon"></i></p>
                 </div>
             </div>
             <form class="ui form attached fluid segment" method="POST" action="action/action.list.php">
@@ -61,33 +61,33 @@
                                         <div class="menu">
                                             <?php
                                             include "class/item.class.php";
-                                            $list = new Action;
-                                            $itens = new Item;
-                                            $item = $itens->loadItens();
+					                        $list = new Action;
+					                        $itens = new Item;
+					                        $item = $itens->loadItens();
 
-                                            foreach ($item as $value) {
-                                                $select = '';
-                                                if ($item == $value['Item']) {
-                                                    $select = 'active selected';
-                                                }
-                                                echo "<div class='item ". $select. "' id='{$value['Tipo']}' data-min='{$value['Minimo']}' data-value='{$value['Item']}'>";
-                                                echo "<span class='text'>{$value['Item']}</span>";
-                                                $names = $list->getNameItem($key, $value['Item']);
-                                                foreach ($names as $name) {
-                                                    echo "<span class='description'>{$name}</span>";
-                                                }
-                                                echo "</div>";
-                                            }
-                                            ?>
+					                        foreach ($item as $value) {
+						                    $select = '';
+						                    if ($item == $value['Item']) {
+						                        $select = 'active selected';
+						                    }
+						                    echo "<div class='item ". $select. "' id='{$value['Tipo']}' data-min='{$value['Minimo']}' data-value='{$value['Item']}'>";
+						                    echo "<span class='text'>{$value['Item']}</span>";
+						                    $names = $list->getNameItem($key, $value['Item']);
+						                    foreach ($names as $name) {
+						                        echo "<span class='description'>{$name}</span>";
+						                    }
+						                    echo "</div>";
+					                        }
+					                        ?>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="four wide field column disabled" id="componentQtd">
                                     <?php
                                     include 'class/tipo.class.php';
-                                    $tipos = new Tipo;
-                                    $first = $tipos->firstTipo();
-                                    ?>
+				                    $tipos = new Tipo;
+				                    $first = $tipos->firstTipo();
+				                    ?>
                                     <label>Quantidade</label>
                                     <div class="ui right labeled input" id="labelQtd">
                                         <input name="qtd" type="number" id="inputQtd" class="inputQtd validate" data-error="Insira a quantidade." disabled>
@@ -103,13 +103,13 @@
                     <div class="six wide column">
                         <button class="ui blue labeled icon button" tabindex="0">
                         <i class="checkmark box icon"></i>
-                        Vou trazer
+                        Vou levar
                         </button>
                     </div>
                     <div class="ten wide column">
                         <div class="ui small icon yellow message hidden" id="notificationMessage">
                             <i class="icon idea"></i>
-                            Este item ja tem na lista e normalmente não passa dessa quantidade.Que tal trocar este item pelo Café?
+                            Este item já tem na lista e normalmente não passa dessa quantidade.Que tal trocar este item pelo Café?
                         </div>
                     </div>
                 </div>
@@ -119,7 +119,7 @@
                     <thead>
                         <tr>
                             <th class="six wide">
-                                <i 
+                                <i
                                     data-ordener
                                     data-type="Nome"
                                     data-order="<?= ($ordener['type'] === 'Nome') ? ($ordener['order'] === 'ASC') ? 'DESC' : 'ASC' : 'ASC' ?>"
@@ -128,7 +128,7 @@
                                 <span>Nome</span>
                             </th>
                             <th class="ten wide">
-                                <i 
+                                <i
                                     data-ordener
                                     data-type="Item"
                                     data-order="<?= ($ordener['type'] === 'Item') ? ($ordener['order'] === 'ASC') ? 'DESC' : 'ASC' : 'ASC' ?>"
@@ -142,11 +142,11 @@
                     <tbody>
                         <?php
                         $list = $action->loadList($key);
-                        if ($ordener['type'] !== null && $ordener['order'] !== null) {
-                            $list = Helper_php::array_sort($list, $ordener['type'], 'SORT_'.$ordener['order']);
-                        }
+		                if ($ordener['type'] !== null && $ordener['order'] !== null) {
+			                $list = Helper_php::array_sort($list, $ordener['type'], 'SORT_'.$ordener['order']);
+		                }
 
-                        foreach ($list as $reg => $value) { ?>
+		                foreach ($list as $reg => $value) {?>
                             <tr>
                                 <td>
                                     <a class="ui <?= $action->getColor() ?> large circular label"><?= $value['Letra'] ?></a>
@@ -172,9 +172,7 @@
             </div>
         </div>
         <?php
-
-} else {
-    ?>
+    } else { ?>
         <div class="ui container">
             <div class="ui icon attached message">
                 <i class="calendar icon"></i>
@@ -187,7 +185,6 @@
             </div>
         </div>
         <?php
-
-} ?>
+    } ?>
     </body>
 </html>
