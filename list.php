@@ -16,7 +16,7 @@ include_once 'class/menu.class.php';
                     <div class="header">
                         Lista
                     </div>
-                    <p>Lista de Arraiás</p>
+                    <p>Lista do Açaí</p>
                 </div>
             </div>
             <form class="ui form attached fluid segment" method="POST" action="action/action.list.php">
@@ -70,14 +70,16 @@ include_once 'class/menu.class.php';
                             <?php
                         }
                         ?>
-                    </tbody>
+                        </tbody>
                 </table>
             </div>
         </div>
         <script type="text/javascript">
-        $(function() {
-            $('#data').mask("99/99/9999",{placeholder:"DD/MM/AAAA"});
-        });
+            $(function() {
+                $('#data').mask("99/99/9999", {
+                    placeholder:"DD/MM/AAAA"
+                });
+            });
         </script>
     </body>
 </html>

@@ -6,17 +6,50 @@
 class Menu
 {
 
-    private $menus = array(
-                        array('nome'=>'inicio','title'=>'Início','href'=>'index.php'),
-                        array('nome'=>'cadastro','title'=>'Cadastro','dropdown'=> array(
-                            array('nome'=>'lista','title'=>'Lista','href'=>'list.php'),
-                            array('nome'=>'item','title'=>'Item','href'=>'item.php'),
-                            array('nome'=>'tipo','title'=>'Tipo','href'=>'type.php'))
-                            ),
-                        array('nome'=>'relatorio','title'=>'Relatório','href'=>'relatorio.php'),
-                        array('nome'=>'sugestoes','title'=>'Sugestões','href'=>'suggestion.php'),
-                        array('nome'=>'sobre','title'=>'Sobre','href'=>'sobre.php','align'=>'right')
-                        );
+    private $menus = [
+        [
+            'nome'=>'inicio',
+            'title'=>'Início',
+            'href'=>'index.php',
+        ],
+        [
+            'nome'=>'cadastro',
+            'title'=>'Cadastro',
+            'dropdown'=> [
+                [
+                    'nome'=>'lista',
+                    'title'=>'Lista',
+                    'href'=>'list.php',
+                ],
+                [
+                    'nome'=>'item',
+                    'title'=>'Item',
+                    'href'=>'item.php',
+                ],
+                [
+                    'nome'=>'tipo',
+                    'title'=>'Tipo',
+                    'href'=>'type.php',
+                ],
+            ],
+        ],
+        [
+            'nome'=>'relatorio',
+            'title'=>'Relatório',
+            'href'=>'relatorio.php',
+        ],
+        [
+            'nome'=>'sugestoes',
+            'title'=>'Sugestões',
+            'href'=>'suggestion.php',
+        ],
+        [
+            'nome'=>'sobre',
+            'title'=>'Sobre',
+            'href'=>'sobre.php',
+            'align'=>'right',
+        ],
+    ];
 
     private $title;
     private $menuLeft;
@@ -44,7 +77,7 @@ class Menu
                             <i class="large spoon middle aligned icon"></i>
                             <div class="content">
                                 <a href="/" class="header">AgênciaSys</a>
-                                <div class="description">Lista do Arraiá</div>
+                                <div class="description">Lista do Açaí</div>
                             </div>
                         </div>
                     </div>

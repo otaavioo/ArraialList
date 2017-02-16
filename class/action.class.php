@@ -21,7 +21,7 @@ class Action extends Helper
         if (isset($vKey)) {
             $key = $vKey;
         } else {
-            $key = self::nextList($read, $key);
+            $key = self::nextList($read);
         }
         if ($read == -1) {
             echo '<tr><td>Não tem lista futura.</td></tr>';
@@ -81,26 +81,13 @@ class Action extends Helper
         return false;
     }
 
-    /*public function getDate( $vKey )
-    {
-        $read = parent::ManipulateArchive($this->list,'r');
-        if( isset( $vKey ) ) {
-            $key = $vKey;
-        }
-        if (isset($key)) {
-            $key = self::nextList( $read, $key );
-            return array('date'=>$read[$vKey]['Data'],'key'=>$key);
-        }
-        return false;
-    }*/
-
     public function editList($vKey, $obj)
     {
         $lista = parent::ManipulateArchive($this->list, 'r');
         if (isset($vKey)) {
             $key = $vKey;
         } else {
-            $key = self::nextList($lista, $key);
+            $key = self::nextList($lista);
         }
         array_push($lista[$key]['lista'], $obj);
         $lista = json_encode($lista, JSON_UNESCAPED_SLASHES);
@@ -129,7 +116,6 @@ class Action extends Helper
             }
             $url = $this->urlIndex."?key=".$vKey;
         } else {
-            $cont = (count($lista) - 1);
             unset($lista[$vKey]);
             foreach ($lista as $key => $value) {
                 if ($key > $i) {
@@ -151,7 +137,7 @@ class Action extends Helper
         return $this->arrayColor[$color];
     }
 
-    private function nextList($obj, $vKey = null)
+    private function nextList($obj)
     {
         foreach ($obj as $key => $list) {
             $data = explode('/', $list['Data']);
@@ -177,7 +163,7 @@ class Action extends Helper
         foreach ($obj as $key => $value) {
             $sobrenome = '';
             $nome = explode(' ', $value['Nome']);
-            for ($i = 1;$i <= count($nome)-1; $i++) {
+            for ($i = 1; $i <= count($nome)-1; $i++) {
                 $sobrenome .= $nome[$i].' ';
             }
             $obj[$key]['Sobrenome'] = $sobrenome;

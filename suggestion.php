@@ -19,7 +19,7 @@ $access = $_GET['access'];
                     <div class="header">
                         Sugestões
                     </div>
-                    <p>Esta é a área para que sejam enviadas sugestões para implementação e correção neste projeto da Lista do Arraiá</p>
+                    <p>Esta é a área para que sejam enviadas sugestões para implementação e correção neste projeto da Lista do Açaí</p>
                 </div>
             </div>
 
@@ -86,21 +86,25 @@ $access = $_GET['access'];
                                             <?= $value['curtida'].' '.$people ?>
                                         </small>
                                     </div>
-                                    <?php if (isset($value['concluido']) && $value['concluido']) { ?>
+                                    <?php if (isset($value['concluido']) && $value['concluido']) {
+    ?>
                                         <div class="item">
                                             <a class="ui green tag label">Sugestão Realizada</a>
                                         </div>
-                                    <?php } ?>
+                                    <?php 
+}
+                        ?>
                                 </div>
                             </div>
 
                             <div class="content">
                                 <div class="transition visible" style="display: block !important;">
-                                    
+
                                     <div class="text"><?= $value['descricao'] ?></div>
 
 
-                                    <?php if (!isset($value['concluido']) || $value['concluido'] === false) { ?>
+                                    <?php if (!isset($value['concluido']) || $value['concluido'] === false) {
+    ?>
                                         <div class="ui divider"></div>
                                         <div class="ui grid">
 
@@ -113,7 +117,8 @@ $access = $_GET['access'];
                                                     </button>
                                                 </form>
                                             </div>
-                                            <?php if ($access === '8020') { ?>
+                                            <?php if ($access === '8020') {
+    ?>
                                                 <div class="two wide column">
                                                     <form action="action/action.suggestion.php" method="POST">
                                                         <input type="hidden" name="key" value="<?= $key ?>">
@@ -124,14 +129,19 @@ $access = $_GET['access'];
                                                         </button>
                                                     </form>
                                                 </div>
-                                            <?php } ?>
+                                            <?php 
+}
+    ?>
 
                                         </div>
-                                    <?php } ?>
+                                    <?php 
+}
+                        ?>
                                 </div>
                             </div>
                         </div>
                     <?php
+
                     }
                 }
                 ?>
